@@ -52,6 +52,14 @@ Template::Plugin::HTML::Template - HTML::Template filter in TT
   My name is <TMPL_VAR name=myname>
   [% END %]
 
+  # HTML::Template parameters
+  [% USE ht = HTML.Template(loop_context_vars = 1) %]
+  [% FILTER $ht %]
+  <TMPL_LOOP employee>
+     <TMPL_IF __FIRST__>...</TMPL_IF>
+  </TMPL_LOOP>
+  [% END %]
+
 =head1 DESCRIPTION
 
 Template::Plugin::HTML::Template is a TT plugin to filter
