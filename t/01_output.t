@@ -24,3 +24,19 @@ __END__
   Name: Steve <br>
   Job:  soda jerk  <p>
 
+--test--
+[% USE ht = HTML.Template(loop_context_vars = 1) -%]
+[% FILTER html_template -%]
+<TMPL_LOOP NAME=EMPLOYEE_INFO><TMPL_IF name=__FIRST__>First</TMPL_IF>
+  Name: <TMPL_VAR NAME=NAME> <br>
+  Job:  <TMPL_VAR NAME=JOB>  <p>
+</TMPL_LOOP>
+[%- END %]
+--expect--
+First
+  Name: Sam <br>
+  Job:  programmer  <p>
+
+  Name: Steve <br>
+  Job:  soda jerk  <p>
+
