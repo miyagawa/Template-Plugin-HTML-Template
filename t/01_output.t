@@ -26,7 +26,7 @@ __END__
 
 --test--
 [% USE ht = HTML.Template(loop_context_vars = 1) -%]
-[% FILTER html_template -%]
+[% FILTER $ht -%]
 <TMPL_LOOP NAME=EMPLOYEE_INFO><TMPL_IF name=__FIRST__>First</TMPL_IF>
   Name: <TMPL_VAR NAME=NAME> <br>
   Job:  <TMPL_VAR NAME=JOB>  <p>
